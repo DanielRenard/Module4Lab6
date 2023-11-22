@@ -1,4 +1,8 @@
-function addJCard() {
+fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
+.then((response) => response.json())
+.then((json) => addCard(json));
+
+function addCard(json) {
     json.forEach((item) => {
          const template = document
         .getElementById("card-template")
@@ -9,7 +13,3 @@ function addJCard() {
     }
     );
 }
-
-json.forEach((item) => {
-    addJCard(item.title, item.body);
-  });
